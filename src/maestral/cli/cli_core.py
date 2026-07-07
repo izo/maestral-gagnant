@@ -260,8 +260,8 @@ def stop(config_name: str) -> None:
 @config_option
 def gui(config_name: str) -> None:
     import termios
-
     from importlib.metadata import entry_points, requires, version
+
     from packaging.requirements import Requirement
     from packaging.version import Version
 

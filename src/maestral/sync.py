@@ -40,6 +40,7 @@ from typing import (
 # external imports
 import click
 from pathspec import PathSpec
+from pathspec.pattern import Pattern
 from typing_extensions import ParamSpec, TypeGuard
 from watchdog.events import (
     EVENT_TYPE_CREATED,
@@ -1145,7 +1146,7 @@ class SyncEngine:
         return self._mignore_path
 
     @property
-    def mignore_rules(self) -> PathSpec:
+    def mignore_rules(self) -> PathSpec[Pattern]:
         """List of mignore rules following git wildmatch syntax (read only)."""
         return self._mignore_rules
 

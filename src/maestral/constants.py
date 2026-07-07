@@ -9,9 +9,9 @@ import platform
 # system imports
 import sys
 from enum import Enum
-from typing import ContextManager
 from importlib.metadata import PackageNotFoundError, metadata
 from importlib.resources import as_file, files
+from typing import ContextManager
 
 
 def resource_path(package: str, resource: str) -> ContextManager[pathlib.Path]:

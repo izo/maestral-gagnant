@@ -20,7 +20,7 @@ def get_term_size() -> os.terminal_size:
     return shutil.get_terminal_size(fallback=(sys.maxsize, sys.maxsize))
 
 
-def freeze_support():
+def freeze_support() -> None:
     """
     Provides support to start the CLI from a frozen executable.
     """
