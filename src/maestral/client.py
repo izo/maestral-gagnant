@@ -1680,7 +1680,7 @@ def convert_space_usage(res: users.SpaceUsage) -> PersonalSpaceUsage:
         return PersonalSpaceUsage(res.used, 0, None)
 
 
-def convert_metadata(res):  # type:ignore[no-untyped-def]
+def convert_metadata(res):  # type: ignore[no-untyped-def]
     if isinstance(res, files.FileMetadata):
         symlink_target = res.symlink_info.target if res.symlink_info else None
         shared = res.sharing_info is not None or res.has_explicit_shared_members

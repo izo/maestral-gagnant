@@ -20,6 +20,11 @@ def test_check_for_updates(m: Maestral) -> None:
 
     data = resp.json()
 
+    if len(data) < 2:
+        # Need at least two releases (latest + previous) to exercise the
+        # update comparison. A fresh fork may not have any releases yet.
+        pytest.skip("Fewer than two GitHub releases available to compare")
+
     previous_release = data[1]["tag_name"].lstrip("v")
     latest_stable_release = data[0]["tag_name"].lstrip("v")
 

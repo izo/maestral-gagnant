@@ -3842,7 +3842,7 @@ def do_parallel(
         max_workers=NUM_THREADS, thread_name_prefix=thread_name_prefix
     ) as thread_pool_executor:
         futures = [
-            thread_pool_executor.submit(func, *args)  # type:ignore[call-arg]
+            thread_pool_executor.submit(func, *args)  # type: ignore[call-arg]
             for args in zip(*iterables)
         ]
 
