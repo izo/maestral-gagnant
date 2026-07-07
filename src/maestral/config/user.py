@@ -18,7 +18,7 @@ import os
 import os.path as osp
 import shutil
 from threading import RLock
-from typing import Any, Dict, Iterator, MutableSet, TypeVar, Iterable
+from typing import Any, Dict, Iterable, Iterator, MutableSet, TypeVar
 
 from packaging.version import Version
 

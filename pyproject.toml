@@ -3,11 +3,12 @@ requires = ["setuptools>=61.2", "build"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "maestral"
+name = "maestral-gagnant"
 version = "1.9.7.dev0"
-authors = [{ name = "Sam Schott", email = "sam.schott@outlook.com" }]
+authors = [{ name = "izo", email = "math.drouet@gmail.com" }]
+maintainers = [{ name = "izo", email = "math.drouet@gmail.com" }]
 license = { text = "MIT" }
-description = "Open-source Dropbox client for macOS and Linux."
+description = "Open-source Dropbox client for macOS and Linux (maintained fork of Maestral)."
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: Unix",
@@ -19,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3 :: Only",
 ]
-urls = { Homepage = "https://maestral.app" }
+urls = { Homepage = "https://github.com/izo/maestral-gagnant", Repository = "https://github.com/izo/maestral-gagnant" }
 requires-python = ">=3.10"
 dependencies = [
     "click>=8.2.0",
@@ -46,6 +47,10 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.optional-dependencies]
+# NOTE: the GUI frontends below are the upstream Maestral packages, which depend
+# on the upstream `maestral` distribution. Installing them alongside this fork may
+# pull in upstream `maestral` and conflict. Prefer running the fork headless, or
+# replace these with fork-specific GUI packages when available.
 gui = [
     "maestral-qt>=1.9.7.dev0;sys_platform=='linux'",
     "maestral-cocoa>=1.9.7.dev0;sys_platform=='darwin'",

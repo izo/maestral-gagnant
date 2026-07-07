@@ -9,9 +9,9 @@ import platform
 # system imports
 import sys
 from enum import Enum
-from typing import ContextManager
 from importlib.metadata import PackageNotFoundError, metadata
 from importlib.resources import as_file, files
+from typing import ContextManager
 
 
 def resource_path(package: str, resource: str) -> ContextManager[pathlib.Path]:
@@ -34,7 +34,7 @@ for package in (
 
 # app
 APP_NAME = "Maestral"
-BUNDLE_ID = "com.samschott.maestral"
+BUNDLE_ID = "com.izo.maestral"
 APP_ICON_PATH = resource_path("maestral.resources", "maestral.png").__enter__()
 ENV = {"PYTHONOPTIMIZE": "2", "LC_CTYPE": "UTF-8"}
 DEFAULT_CONFIG_NAME = "maestral"
@@ -99,4 +99,4 @@ IS_LINUX = platform.system() == "Linux"
 DROPBOX_APP_KEY = "2jmbq42w7vof78h"
 
 # urls
-GITHUB_RELEASES_API = "https://api.github.com/repos/samschott/maestral/releases"
+GITHUB_RELEASES_API = "https://api.github.com/repos/izo/maestral-gagnant/releases"

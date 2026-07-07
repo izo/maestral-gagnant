@@ -26,7 +26,7 @@ from .output import warn
 #   when the object is used with prompt inputs.
 
 
-class DropboxPath(click.ParamType):
+class DropboxPath(click.ParamType[str | None]):
     """A command line parameter representing a Dropbox path
 
     This parameter type provides custom shell completion for items inside the local
@@ -111,7 +111,7 @@ class DropboxPath(click.ParamType):
         return completions
 
 
-class ConfigKey(click.ParamType):
+class ConfigKey(click.ParamType[str | None]):
     """A command line parameter representing a config key
 
     This parameter type provides custom shell completion for existing config keys.
@@ -132,7 +132,7 @@ class ConfigKey(click.ParamType):
         return [CompletionItem(key) for key in KEYS if key.startswith(incomplete)]
 
 
-class ConfigName(click.ParamType):
+class ConfigName(click.ParamType[str | None]):
     """A command line parameter representing a Dropbox path
 
     This parameter type provides custom shell completion for existing config names.

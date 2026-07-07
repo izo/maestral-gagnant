@@ -23,10 +23,9 @@ import stat
 import subprocess
 import sys
 from enum import Enum
+from importlib.metadata import PackageNotFoundError, files
 from pathlib import Path
 from typing import Any
-
-from importlib.metadata import PackageNotFoundError, files
 
 from .constants import BUNDLE_ID, ENV, FROZEN, IS_LINUX, IS_MACOS
 from .exceptions import MaestralApiError
