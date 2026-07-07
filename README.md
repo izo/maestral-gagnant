@@ -1,18 +1,13 @@
-[![PyPi Release](https://img.shields.io/pypi/v/maestral.svg)](https://pypi.org/project/maestral/)
 [![Pyversions](https://img.shields.io/pypi/pyversions/maestral.svg)](https://pypi.org/pypi/maestral/)
-[![Documentation Status](https://readthedocs.org/projects/maestral/badge/?version=latest)](https://maestral.readthedocs.io/en/latest/?badge=latest)
-[![codecov](https://codecov.io/gh/SamSchott/maestral/branch/master/graph/badge.svg?token=V0C7IQ1MAU)](https://codecov.io/gh/SamSchott/maestral)
 
-# Archived
+> **Fork notice**
+>
+> `maestral-gagnant` is a maintained fork of [Maestral](https://github.com/SamSchott/maestral)
+> by Sam Schott, which was archived on 2026-07-28. This fork continues development of the
+> light-weight, open-source Dropbox client. All credit for the original work goes to the
+> upstream author and contributors.
 
-As of 2026-07-28, this project is archived. It's been a fun challenge to develop a
-syncing client, but unfortunately, I find too little time to invest in Maestral these
-days. I've also moved away from using Dropbox myself.
-
-Maestral will still remain usable in the medium term, but will no longer be actively
-maintained or receive updates.
-
-# Maestral <img src="https://raw.githubusercontent.com/SamSchott/maestral/master/src/maestral/resources/maestral.png" align="right" title="Maestral" width="110" height="110">
+# Maestral <img src="https://raw.githubusercontent.com/izo/maestral-gagnant/main/src/maestral/resources/maestral.png" align="right" title="Maestral" width="110" height="110">
 
 A light-weight and open-source Dropbox client for macOS and Linux.
 
@@ -46,49 +41,30 @@ or downloading a file if it already exists with the same content locally or in t
 
 ## Installation
 
-An app bundle is provided for macOS Catalina and higher and can be downloaded from the
-Releases tab. This app Bundle is also package as a Homebrew cask.
-
-On other platforms, you can download and install Maestral as a Python package from PyPI or
-as a Docker image from Docker Hub.
-
-For more detailed information on the installation, setup and system requirements, please
-check the [documentation](https://maestral.app/docs/installation).
-
-### Homebrew
-
-The official Maestral releases are also available as Homebrew casks. If you have
-[Homebrew](https://brew.sh) on your system, you can install using:
-
-```console
-$ brew install maestral
-```
-
-### Python package using PyPI
-
-Is is recommended to install Maestral inside a virtual environment as follows:
+This fork is installed from source. It is recommended to install it inside a virtual
+environment as follows:
 
 ```console
 $ python3 -m venv maestral-venv
 $ source maestral-venv/bin/activate
-(maestral-venv)$ python3 -m pip install --upgrade maestral
+(maestral-venv)$ python3 -m pip install --upgrade 'git+https://github.com/izo/maestral-gagnant.git'
 ```
 
-If you intend to use the graphical user interface, you also need to specify the GUI option
-during installation or upgrade. This will install the `maestral-qt` frontend and `PyQt5`
-on Linux and `maestral-cocoa` on macOS:
+The command line entry point remains `maestral`. For general setup, system requirements
+and CLI reference, the original [Maestral documentation](https://maestral.app/docs) still
+applies to this fork.
 
-```console
-(maestral-venv)$ python3 -m pip install --upgrade 'maestral[gui]'
-```
+> **GUI note:** the upstream `maestral-qt` (Linux) and `maestral-cocoa` (macOS) frontends
+> depend on the upstream `maestral` distribution and may conflict with this fork. Prefer
+> running the fork headless (`maestral start`) until fork-specific GUI packages are
+> available.
 
 ### Docker image
 
-A Docker image is available for x86, arm/v7 (32bit) and arm64 platforms and can be
-installed with:
+You can build a Docker image locally from the included `Dockerfile`:
 
-```colsole
-$ docker pull maestraldbx/maestral
+```console
+$ docker build -t maestral-gagnant .
 ```
 
 ## Usage
@@ -97,8 +73,8 @@ Run `maestral gui` in the command line (or open the Maestral app on macOS) to st
 Maestral with a graphical user interface. On its first run, Maestral will guide you
 through linking and configuring your Dropbox and will then start syncing.
 
-<img src="https://raw.githubusercontent.com/SamSchott/maestral-dropbox/master/screenshots/macOS_dark.png" alt="screenshot macOS" width="840"/>
-<img src="https://raw.githubusercontent.com/SamSchott/maestral-dropbox/master/screenshots/Ubuntu.png" alt="screenshot Fedora" width="840"/>
+<img src="https://raw.githubusercontent.com/izo/maestral-gagnant/main/screenshots/macOS_dark.png" alt="screenshot macOS" width="840"/>
+<img src="https://raw.githubusercontent.com/izo/maestral-gagnant/main/screenshots/Ubuntu.png" alt="screenshot Fedora" width="840"/>
 
 ### Command line usage
 
@@ -161,13 +137,10 @@ Relevant resources are:
 [CONTRIBUTING.md](CONTRIBUTING.md) contains detailed information on the expected code
 style and test format.
 
-If you are using the macOS app bundle, please consider sponsoring the project with £1 per
-month to offset the cost of an Apple Developer account to sign and notarize the bundle.
-
 ## System requirements
 
 - macOS 10.15 Catalina or higher or Linux
-- Python 3.7 or higher
+- Python 3.10 or higher
 - For the system tray icon on Linux:
   - [gnome-shell-extension-appindicator](https://github.com/ubuntu/gnome-shell-extension-appindicator)
     on Gnome 3.26 and higher

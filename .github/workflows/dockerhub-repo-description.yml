@@ -1,13 +1,14 @@
 name: Uploads Maestral repo description to hub.docker.com
 
+# Disabled for the maestral-gagnant fork: this pushes to the upstream DockerHub
+# repository (maestraldbx/maestral) and requires upstream secrets. Re-enable and
+# repoint DOCKERHUB_REPOSITORY once the fork has its own DockerHub repo.
 on:
-  push:
-    tags:
-      - 'v*.*.*'
   workflow_dispatch:
 
 jobs:
   dockerhub-repo-description:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

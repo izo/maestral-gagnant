@@ -8,12 +8,12 @@ sys.path.insert(0, os.path.abspath("../src"))
 
 # -- Project information ---------------------------------------------------------------
 
-author = "Sam Schott"
+author = "izo"
 version = "1.9.7.dev0"
 release = version
 project = "Maestral"
 title = "Maestral API Documentation"
-copyright = f"{time.localtime().tm_year}, {author}"
+copyright = f"{time.localtime().tm_year}, izo — fork of Maestral by Sam Schott"
 
 # -- General configuration -------------------------------------------------------------
 

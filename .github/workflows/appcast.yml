@@ -1,11 +1,15 @@
 name: Update Sparkle appcast
 
+# Disabled for the maestral-gagnant fork: this checks out the upstream `website`
+# branch and uses upstream Sparkle signing secrets to publish the macOS app bundle
+# appcast, neither of which exist in this fork. Re-enable if the fork ships a signed
+# macOS app bundle.
 on:
-  release:
   workflow_dispatch:
 
 jobs:
   generate_appcast:
+    if: ${{ false }}
     runs-on: macos-latest
     steps:
       - name: Checkout website

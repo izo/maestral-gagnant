@@ -34,7 +34,7 @@ for package in (
 
 # app
 APP_NAME = "Maestral"
-BUNDLE_ID = "com.samschott.maestral"
+BUNDLE_ID = "com.izo.maestral"
 APP_ICON_PATH = resource_path("maestral.resources", "maestral.png").__enter__()
 ENV = {"PYTHONOPTIMIZE": "2", "LC_CTYPE": "UTF-8"}
 DEFAULT_CONFIG_NAME = "maestral"
@@ -99,4 +99,4 @@ IS_LINUX = platform.system() == "Linux"
 DROPBOX_APP_KEY = "2jmbq42w7vof78h"
 
 # urls
-GITHUB_RELEASES_API = "https://api.github.com/repos/samschott/maestral/releases"
+GITHUB_RELEASES_API = "https://api.github.com/repos/izo/maestral-gagnant/releases"
