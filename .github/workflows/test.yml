@@ -16,7 +16,11 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest]
-        python-version: ['3.10', '3.x']
+        # Pin the upper version to the latest officially-supported Python (3.13).
+        # Python 3.14 changes fork() semantics for multi-threaded processes, which
+        # breaks the daemon-startup offline tests on macOS (Start.Failed / "Could
+        # not get proxy"). Bump this once the daemon is validated on 3.14.
+        python-version: ['3.10', '3.13']
 
     runs-on: ${{ matrix.platform }}
     steps:
